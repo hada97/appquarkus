@@ -1,12 +1,10 @@
 package crud.quarkus;
 
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.GET;
+import crud.quarkus.entity.UserEntity;
+import crud.quarkus.servicce.UserService;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-
 
 
 @Path("/users")
@@ -14,9 +12,21 @@ import jakarta.ws.rs.core.Response;
 @Consumes(MediaType.APPLICATION_JSON)
 public class UserController {
 
+    private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
     @GET
-    public Response teste(){
+    public Response teste() {
+        UserEntity.findAll();
         return Response.ok("teste").build();
+    }
+
+    @POST
+    public Response createUser(UserEntity userEntity) {
+        return Response.ok("bruno").build();
     }
 
 }
