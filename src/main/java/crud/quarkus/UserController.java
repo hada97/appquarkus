@@ -2,6 +2,7 @@ package crud.quarkus;
 
 import crud.quarkus.entity.UserEntity;
 import crud.quarkus.servicce.UserService;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -19,14 +20,15 @@ public class UserController {
     }
 
     @GET
-    public Response teste() {
-        UserEntity.findAll();
-        return Response.ok("teste").build();
+    public Response findAll(@QueryParam("page") Integer page, @QueryParam("pagesize") @DefaultValue("10") Integer pagesize) {
+        var users = userService.findAll(page, pagesize);
+        return Response.ok(users).build();
     }
 
     @POST
+    @Transactional
     public Response createUser(UserEntity userEntity) {
-        return Response.ok("bruno").build();
+        return Response.ok(userService.createUser(userEntity)).build();
     }
 
 }
