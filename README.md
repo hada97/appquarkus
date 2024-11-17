@@ -1,8 +1,22 @@
 # appquarkus
 
+## 💻 About the Project
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+
+## ⚙️ Features
+
+- **Users CRUD**: create, read, list, and delete users in a MySQL database.
+
+## 🛠 Technologies Used
+
+- **Java 17**: Programming language used.
+- **Quarkus**: Framework for developing Java applications.
+- **Maven**:  Automation and dependency management tool.
+- **Docker**: Platform that simplifies the creation, distribution, and execution of applications in containers.
+- **Azure**:  Cloud platform.
 
 ## Running the application in dev mode
 
@@ -55,9 +69,13 @@ If you want to learn more about building native executables, please consult <htt
 
 ## Related Guides
 
-- REST ([guide](https://quarkus.io/guides/rest)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
-- REST Jackson ([guide](https://quarkus.io/guides/rest#json-serialisation)): Jackson serialization support for Quarkus REST. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it
-- Hibernate ORM with Panache ([guide](https://quarkus.io/guides/hibernate-orm-panache)): Simplify your persistence code for Hibernate ORM via the active record or the repository pattern
+- REST ([guide](https://quarkus.io/guides/rest)): A Jakarta REST implementation utilizing build time processing and
+  Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on
+  it.
+- REST Jackson ([guide](https://quarkus.io/guides/rest#json-serialisation)): Jackson serialization support for Quarkus
+  REST. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it
+- Hibernate ORM with Panache ([guide](https://quarkus.io/guides/hibernate-orm-panache)): Simplify your persistence code
+  for Hibernate ORM via the active record or the repository pattern
 - JDBC Driver - MySQL ([guide](https://quarkus.io/guides/datasource)): Connect to the MySQL database via JDBC
 
 ## Provided Code
@@ -69,7 +87,6 @@ Create your first JPA entity
 [Related guide section...](https://quarkus.io/guides/hibernate-orm)
 
 [Related Hibernate with Panache section...](https://quarkus.io/guides/hibernate-orm-panache)
-
 
 ### REST
 

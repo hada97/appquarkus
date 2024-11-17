@@ -7,6 +7,8 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.util.UUID;
+
 
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
@@ -25,10 +27,31 @@ public class UserController {
         return Response.ok(users).build();
     }
 
+    @GET
+    @Path("/{id}")
+    public Response getById(@QueryParam("id") UUID userId) {
+        return Response.ok(UserService.findById(userId)).build();
+    }
+
+
     @POST
     @Transactional
     public Response createUser(UserEntity userEntity) {
         return Response.ok(userService.createUser(userEntity)).build();
+    }
+
+    @PUT
+    @Transactional
+    @Path("/{id}")
+    public Response updateUser(@PathParam("id") UUID userId, UserEntity userEntity) {
+        return Response.ok(userService.updateUser(userId, userEntity)).build();
+    }
+
+    @DELETE
+    @Transactional
+    @Path("/{id}")
+    public Response deleteById(@PathParam("id") UUID userId) {
+        return Response.noContent().build();
     }
 
 }
