@@ -3,7 +3,6 @@ package crud.quarkus.servicce;
 import crud.quarkus.entity.UserEntity;
 import crud.quarkus.exception.UserNotFoundException;
 import jakarta.enterprise.context.ApplicationScoped;
-
 import java.util.List;
 import java.util.UUID;
 

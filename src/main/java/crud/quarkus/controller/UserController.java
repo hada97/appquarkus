@@ -1,4 +1,4 @@
-package crud.quarkus;
+package crud.quarkus.controller;
 
 import crud.quarkus.entity.UserEntity;
 import crud.quarkus.servicce.UserService;
@@ -6,9 +6,7 @@ import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-
 import java.util.UUID;
-
 
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
@@ -32,7 +30,6 @@ public class UserController {
     public Response getById(@QueryParam("id") UUID userId) {
         return Response.ok(UserService.findById(userId)).build();
     }
-
 
     @POST
     @Transactional
