@@ -1,4 +1,3 @@
-# appquarkus
 
 ## 💻 About the Project
 
